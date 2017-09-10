@@ -27,18 +27,22 @@
 // (must not contain capital letters)
 #define LASAURGRBL_VERSION "14.11b"
 // build for new driveboard hardware
-#define DRIVEBOARD
+// #define DRIVEBOARD
 
-#define V1401
+//#define V1401
 
 #define BAUD_RATE 57600
 // #define DEBUG_IGNORE_SENSORS  // set for debugging
 
 
 #ifndef V1401
-  #define CONFIG_X_STEPS_PER_MM 32.80839895 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
-  #define CONFIG_Y_STEPS_PER_MM 32.80839895 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
+// DHF (Staunton Makerspace) Stepper motors were slightly off after belt replacement, adjusting.
+  #define CONFIG_X_STEPS_PER_MM 33.37755760 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
+  #define CONFIG_Y_STEPS_PER_MM 33.37755760 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)11
   #define CONFIG_Z_STEPS_PER_MM 32.80839895 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
+//  #define CONFIG_X_STEPS_PER_MM 32.80839895 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)1
+//  #define CONFIG_Y_STEPS_PER_MM 32.80839895 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
+//  #define CONFIG_Z_STEPS_PER_MM 32.80839895 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
 #else
   #define CONFIG_X_STEPS_PER_MM 88.88888888 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
   #define CONFIG_Y_STEPS_PER_MM 90.90909090 //microsteps/mm (no integers, e.g. use 80.0 instead of 80)
@@ -52,8 +56,9 @@
 #define CONFIG_X_ORIGIN_OFFSET 5.0  // mm, x-offset of table origin from physical home
 #define CONFIG_Y_ORIGIN_OFFSET 5.0  // mm, y-offset of table origin from physical home
 #define CONFIG_Z_ORIGIN_OFFSET 0.0   // mm, z-offset of table origin from physical home
+
 #ifndef V1401
-  #define CONFIG_INVERT_X_AXIS 1  // 0 is regular, 1 inverts the y direction
+  #define CONFIG_INVERT_X_AXIS 1  // 0 is regular, 1 inverts the x direction
 #else
   #define CONFIG_INVERT_X_AXIS 0
 #endif
